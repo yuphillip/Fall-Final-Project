@@ -12,10 +12,20 @@
 		}
 		</style>
 		<script>
-
+		function myFunction() 
+		{
+			var x = document.getElementById("myAnchor").href;
+			document.getElementById("demo").innerHTML = x;
+		}
 		</script>
 	</head>
 	<body>	
-		<h1><span> Welcome to League of Legends </span></h1><br	/>
+		<h1><span><em><u> Welcome to League of Legends </em></u> </span></h1><br	/>
+		
+		<h2> <a id="myAnchor" href="TopChamps.html">Top Champs</a> </h2>
+		<h2> <a id="myAnchor" href="JgChamps.html">Jungle Champs</a> </h2>
+		<h2> <a id="myAnchor" href="MidChamps.html">Middle Champs</a> </h2>
+		<h2> <a id="myAnchor" href="BotChamps.html">ADC Champs</a> </h2>
+		<h2> <a id="myAnchor" href="SuppChamps.html">Support Champs</a> </h2>
 	</body>
 </html>
