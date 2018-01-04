@@ -1,0 +1,36 @@
+.bgrnd
+{
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:-1;
+	width: 100%;
+    height: auto;
+}
+
+.title
+{
+	font-size: 25pt;
+	color:red;
+	font-family: arial;
+}
+
+body
+{
+	text-align:center;
+	font-size: 15pt;
+	font-family: calibri;
+}
+
+li
+{
+	margin:auto;
+	height:150px;
+	padding:2px;
+	width:450px;	
+	background-color:#316D8A;
+	color:#33B0EC;
+	border:3px solid #33B0EC;
+	border-radius:12px;
+	list-style-type: none;
+}
