@@ -4,9 +4,19 @@ h1
 	color: rgb(255,255,255);
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+.Goal
+{
+	color:rgb(35, 38, 178);	
+}
+.Roles
+{
+	text-align:center;
+	font-size: 50px;
+	
+}
 h2
 {
-	margin-top:150px;
+	margin-top:150px;	
 	text-align:center;
 	word-spacing: 30px;
 	
@@ -21,6 +31,6 @@ a:visited
 }
 div
 {
-	color: red;
-	margin-top: 300px;
+	color:rgb(109, 224, 214);
+	margin-top: 290px;
 }
