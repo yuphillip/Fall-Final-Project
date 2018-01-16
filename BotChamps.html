@@ -4,21 +4,138 @@
 	<head>
 		<title></title>
 		<style>
-		img
+		body
 		{
-			position: absolute;
-			margin: 10;
-			padding: 10;
+			background-image: url("summoner.jpg");
+		}
+		div
+		{
+			
+			width:100px
+			padding:5px;
+			box-sizing: border-box;
+		}
+		iframe
+		{
+			margin-left: 150px;
+		}
+		h1
+		{
 			text-align: center;
-			top: 15%;
-			left: 35%;
+		}
+		h2
+		{
+			color: yellow;
+			text-align: center;
+		}
+		a:visited
+		{
+			color: orange;
 		}
 		</style>
 		<script>
-			
+			function intialize()
+			{
+				Champion = "";
+				ChampNow = document.getElementById("ChampionD");
+				display();
+			}
+			function display()
+			{
+				ChampNow.innerHTML = Champion;
+			}
+			function showVideo1()
+			{
+				var x = document.getElementById("AsheVideo");
+				if (x.style.display === "none") 
+				{
+					x.style.display = "block";
+					Champion = "Ashe";
+					display();
+				} 
+				else 
+				{
+					x.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo2()
+			{
+				var y = document.getElementById("EzrealVideo");
+				if (y.style.display === "none") 
+				{
+					y.style.display = "block";
+					Champion = "Ezreal";
+					display();
+				}
+				else 
+				{
+					y.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo3()
+			{
+				var z = document.getElementById("JhinVideo");
+				if (z.style.display === "none") 
+				{
+					z.style.display = "block";
+					Champion = "Jhin";
+					display();
+				}
+				else 
+				{
+					z.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo4()
+			{
+				var a = document.getElementById("TwitchVideo");
+				if (a.style.display === "none") 
+				{
+					a.style.display = "block";
+					Champion = "Twitch";
+					display();
+				}
+				else 
+				{
+					a.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo5()
+			{
+				var b = document.getElementById("VayneVideo");
+				if (b.style.display === "none") 
+				{
+					b.style.display = "block";
+					Champion = "Vayne";
+					display();
+				}
+				else 
+				{
+					b.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
 		</script>
 	</head>
-	<body>
-		<img src = "wip.gif"></img>
+	<body onload = "intialize();">
+		<h1><span id ="Title">Bot Champs: <span id = "ChampionD"></span></span></h1>
+		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<ul>
+			<div><img src = "Ashe.png" onclick = "showVideo1();"></img><iframe id = "AsheVideo" width="560" height="315" src="https://www.youtube.com/embed/mSbMQ5xDnEg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Ezreal.png" onclick = "showVideo2();"></img><iframe id = "EzrealVideo" width="560" height="315" src="https://www.youtube.com/embed/0dGYt0Ibw94?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Jhin.png" onclick = "showVideo3();"></img><iframe  id = "JhinVideo" width="560" height="315" src="https://www.youtube.com/embed/QvNw0A-D0T0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Twitch.png" onclick = "showVideo4();"></img><iframe id = "TwitchVideo" width="560" height="315" src="https://www.youtube.com/embed/cFtH_wFJBLs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Vayne.png" onclick ="showVideo5();"></img><iframe id = "VayneVideo" width="560" height="315" src="https://www.youtube.com/embed/gZDJqpFspmg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+		<ul>
+		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
 	</body>
 </html>

@@ -4,21 +4,139 @@
 	<head>
 		<title></title>
 		<style>
-		img
+		body
 		{
-			position: absolute;
-			margin: 10;
-			padding: 10;
+			background-image: url("summoner.jpg");
+		}
+		div
+		{
+			
+			width:100px
+			padding:5px;
+			box-sizing: border-box;
+		}
+		iframe
+		{
+			margin-left: 150px;
+		}
+		h1
+		{
 			text-align: center;
-			top: 15%;
-			left: 35%;
+		}
+		h2
+		{
+			color: yellow;
+			text-align: center;
+		}
+		a:visited
+		{
+			color: orange;
 		}
 		</style>
 		<script>
-			
+			function intialize()
+			{
+				Champion = "";
+				ChampNow = document.getElementById("ChampionD");
+				display();
+				
+			}
+			function display()
+			{
+				ChampNow.innerHTML = Champion;
+			}
+			function showVideo1()
+			{
+				var x = document.getElementById("KhaVideo");
+				if (x.style.display === "none") 
+				{
+					x.style.display = "block";
+					Champion = "Kha'Zix";
+					display();
+				} 
+				else 
+				{
+					x.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo2()
+			{
+				var y = document.getElementById("LeeVideo");
+				if (y.style.display === "none") 
+				{
+					y.style.display = "block";
+					Champion = "Lee Sin";
+					display();
+				}
+				else 
+				{
+					y.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo3()
+			{
+				var z = document.getElementById("YiVideo");
+				if (z.style.display === "none") 
+				{
+					z.style.display = "block";
+					Champion = "Master Yi";
+					display();
+				}
+				else 
+				{
+					z.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo4()
+			{
+				var a = document.getElementById("RengarVideo");
+				if (a.style.display === "none") 
+				{
+					a.style.display = "block";
+					Champion = "Rengar";
+					display();
+				}
+				else 
+				{
+					a.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo5()
+			{
+				var b = document.getElementById("UdyrVideo");
+				if (b.style.display === "none") 
+				{
+					b.style.display = "block";
+					Champion = "Udyr";
+					display();
+				}
+				else 
+				{
+					b.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
 		</script>
 	</head>
-	<body>
-		<img src = "wip.gif"></img>
+	<body onload = "intialize();">
+		<h1><span id ="Title">JG Champs: <span id = "ChampionD"></span></span></h1>
+		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<ul>
+			<div><img src = "Kha_Zix.png" onclick = "showVideo1();"></img><iframe id = "KhaVideo" width="560" height="315" src="https://www.youtube.com/embed/jKLK9zFiVII?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Lee Sin.png" onclick = "showVideo2();"></img><iframe id = "LeeVideo" width="560" height="315" src="https://www.youtube.com/embed/e6SleHuJjLo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Master Yi.png" onclick = "showVideo3();"></img><iframe id = "YiVideo" width="560" height="315" src="https://www.youtube.com/embed/RJo0YzTyvXw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Rengar.png" onclick = "showVideo4();"></img><iframe id = "RengarVideo" width="560" height="315" src="https://www.youtube.com/embed/gbHGFazlpCA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Udyr.png" onclick = "showVideo5();"></img><iframe id = "UdyrVideo" width="560" height="315" src="https://www.youtube.com/embed/dK4PwnV59ik?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+		</ul>
+		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
 	</body>
 </html>

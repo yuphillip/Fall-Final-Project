@@ -4,19 +4,139 @@
 	<head>
 		<title></title>
 		<style>
-		img 
+		body
 		{
-			position: absolute;
-			top: 0; bottom:0; left: 0; right:0;
-			margin: auto;
+			background-image: url("summoner.jpg");
 		}
-		
+		div
+		{
+			
+			width:100px
+			padding:5px;
+			box-sizing: border-box;
+		}
+		iframe
+		{
+			margin-left: 150px;
+		}
+		h1
+		{
+			text-align: center;
+		}
+		h2
+		{
+			color: yellow;
+			text-align: center;
+		}
+		a:visited
+		{
+			color: orange;
+		}
 		</style>
 		<script>
-		
+			function intialize()
+			{
+				Champion = "";
+				ChampNow = document.getElementById("ChampionD");
+				display();
+				
+			}
+			function display()
+			{
+				ChampNow.innerHTML = Champion;
+			}
+			function showVideo1()
+			{		
+				var x = document.getElementById("GpVideo");
+				if (x.style.display === "none") 
+				{
+					x.style.display = "block";
+					Champion = "Gangplank";
+					display();
+				} 
+				else 
+				{
+					x.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo2()
+			{
+				var y = document.getElementById("GnarVideo");
+				if (y.style.display === "none") 
+				{
+					y.style.display = "block";
+					Champion = "Gnar";
+					display();
+				}
+				else 
+				{
+					y.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo3()
+			{
+				var z = document.getElementById("RumbleVideo");
+				if (z.style.display === "none") 
+				{
+					z.style.display = "block";
+					Champion = "Rumble";
+					display();
+				}
+				else 
+				{
+					z.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo4()
+			{
+				var a = document.getElementById("TeemoVideo");
+				if (a.style.display === "none") 
+				{
+					a.style.display = "block";
+					Champion = "Teemo";
+					display();
+				}
+				else 
+				{
+					a.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
+			function showVideo5()
+			{
+				var b = document.getElementById("RivenVideo");
+				if (b.style.display === "none") 
+				{
+					b.style.display = "block";
+					Champion = "Riven";
+					display();
+				}
+				else 
+				{
+					b.style.display = "none";
+					Champion = "";
+					display();
+				}
+			}
 		</script>
 	</head>
-	<body>
-		<img src = "wip.gif"></img>
+	<body onload = "intialize();">
+		<h1><span id ="Title">Top Champions: <span id = "ChampionD"></span></span></h1>
+		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<ul>
+			<div><img src = "Gangplank.png" onclick = "showVideo1();"></img><iframe id = "GpVideo" width="560" height="315" src="https://www.youtube.com/embed/3kysDbC-NTo?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></iframe></div>
+			<div><img src = "gnar.png" onclick = "showVideo2();"></img><iframe id = "GnarVideo" width="560" height="315" src="https://www.youtube-nocookie.com/embed/4Qu3rhWGq0s?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "rumble.png" onclick = "showVideo3();"></img><iframe id = "RumbleVideo" width="560" height="315" src="https://www.youtube.com/embed/Dghwqj_Qddc?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></div></li>
+			<div><img src = "teemo.png" onclick = "showVideo4();"></img><iframe id = "TeemoVideo" width="560" height="315" src="https://www.youtube.com/embed/Qj48qHM1MXE?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></div></li>
+			<div><img src = "Riven.png" onclick = "showVideo5();"></img><iframe id = "RivenVideo" width="560" height="315" src="https://www.youtube.com/embed/V_ERvayBr3M?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></div></li>
+		</ul>
+		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
 	</body>
 </html>

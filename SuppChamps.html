@@ -4,21 +4,108 @@
 	<head>
 		<title></title>
 		<style>
-		img
+		body
 		{
-			position: absolute;
-			margin: 10;
-			padding: 10;
+			background-image: url("summoner.jpg");
+		}
+		div
+		{
+			
+			width:100px
+			padding:5px;
+			box-sizing: border-box;
+		}
+		iframe
+		{
+			margin-left: 150px;
+		}
+		h1
+		{
 			text-align: center;
-			top: 15%;
-			left: 35%;
+		}
+		h2
+		{
+			color: yellow;
+			text-align: center;
+		}
+		a:visited
+		{
+			color: orange;
 		}
 		</style>
 		<script>
-			
+			function showVideo1()
+			{
+				var x = document.getElementById("BlitzVideo");
+				if (x.style.display === "none") 
+				{
+					x.style.display = "block";
+				} 
+				else 
+				{
+					x.style.display = "none";
+				}
+			}
+			function showVideo2()
+			{
+				var y = document.getElementById("BardVideo");
+				if (y.style.display === "none") 
+				{
+					y.style.display = "block";
+				}
+				else 
+				{
+					y.style.display = "none";
+				}
+			}
+			function showVideo3()
+			{
+				var z = document.getElementById("LeonaVideo");
+				if (z.style.display === "none") 
+				{
+					z.style.display = "block";
+				}
+				else 
+				{
+					z.style.display = "none";
+				}
+			}
+			function showVideo4()
+			{
+				var a = document.getElementById("SorakaVideo");
+				if (a.style.display === "none") 
+				{
+					a.style.display = "block";
+				}
+				else 
+				{
+					a.style.display = "none";
+				}
+			}
+			function showVideo5()
+			{
+				var b = document.getElementById("ThreshVideo");
+				if (b.style.display === "none") 
+				{
+					b.style.display = "block";
+				}
+				else 
+				{
+					b.style.display = "none";
+				}
+			}
 		</script>
 	</head>
 	<body>
-		<img src = "wip.gif"></img>
+		<h1><span id ="Title">Support Champs: <span id = "ChampionD"></span></span></h1>
+		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<ul>
+			<div><img src = "Blitzcrank.png" onclick = "showVideo1();"></img><iframe id = "BlitzVideo" width="560" height="315" src="https://www.youtube.com/embed/WtmMC23DdT0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Bard.png" onclick = "showVideo2();"></img><iframe id = "BardVideo" width="560" height="315" src="https://www.youtube.com/embed/-tNDoXIYptk?rel=0" 	frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Leona.png" onclick = "showVideo3();"></img><iframe id = "LeonaVideo" width="560" height="315" src="https://www.youtube.com/embed/oViu5Pv_wwY?rel=0" 	frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Soraka.png" onclick = "showVideo4();"></img><iframe id = "SorakaVideo" width="560" height="315" src="https://www.youtube.com/embed/KJ6f1nsoUTs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+			<div><img src = "Thresh.png" onclick = "showVideo5();"></img><iframe id = "ThreshVideo" width="560" height="315" src="https://www.youtube.com/embed/Sv95nBi7ulQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
+		</ul>
+		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> </h2>
 	</body>
 </html>
