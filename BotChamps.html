@@ -34,11 +34,15 @@
 		}
 		</style>
 		<script>
-			function intialize()
+			function initialize()
 			{
 				Champion = "";
 				ChampNow = document.getElementById("ChampionD");
 				display();
+				vid.volume = 0.08
+				vid.play()
+				vid.currentTime = 0;
+				setInterval(loop, 50)
 			}
 			function display()
 			{
@@ -124,9 +128,16 @@
 					display();
 				}
 			}
+			function loop() 
+			{
+				if (vid.paused) 
+				{
+					vid.play()
+				}
+			}
 		</script>
 	</head>
-	<body onload = "intialize();">
+	<body onload = "initialize();">
 		<h1><span id ="Title">Bot Champs: <span id = "ChampionD"></span></span></h1>
 		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
 		<ul>
@@ -137,5 +148,8 @@
 			<div><img src = "Vayne.png" onclick ="showVideo5();"></img><iframe id = "VayneVideo" width="560" height="315" src="https://www.youtube.com/embed/gZDJqpFspmg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
 		<ul>
 		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
+		<audio controls autoplay hidden id = "vid">
+			<source src = "Ranked.mp3" type = "audio/mpeg">
+		</audio>
 	</body>
 </html>

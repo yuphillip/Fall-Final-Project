@@ -11,16 +11,47 @@
 			background-image: url("summoner.jpg");
 		}
 		</style>
+		<script src = "utilities.js"></script>
 		<script>
-		
+			 function initialize()
+			 {
+				lolfactList = ["League of Legends was initially called League of Legends: Clash of Fates before it’s release.","SK Telecom T1 are the only team to have won the LoL World Championship 3 times", "Human Ryze and Black Alistar are the rarest skins in the game.","Turrets deal increasingly more damage with each hit.","All champions with sunglasses take 1 less damage from leona.","One of Kled's many titles is ''High Major Commodore of the First Legion Third Multiplication Double Admiral Artillery Vanguard Company.''","There is a garden in southern Ionia where flowers consume memories.","Zed and Shen are brothers","Rumble's mech is named ''Tristy,'' in honor of a yordle who is very important to him.","Blitzcrank was created by Viktor to be a stronger, faster and smarter golem; one that could better help the people of Zaun.","Darius and Draven are brothers.","Hextech is the fusion of magic and technology, harnessing the power contained within extremely rare crystals.","In Bilgewater, the dead are not buried - they are given back to the ocean in submerged caskets below bobbing tombstones.","Demacia's army is often outnumbered, but is arguably the most elite, well-trained army in Runeterra.","Your champion will continue attacking after only a single click.","The monsters in the jungle won't hurt you unless you attack them.","The Elder Dragon spawns after 35 minutes. Slaying it gives your team both great power and amplifies the effects of already slain dragons!","Attacking an enemy while you're inside brush will reveal you.","A sushi restaurant in China once offered discounts based on League rank.","Champions are most vulnerable to attack when they are in the middle of an action, like attacking a minion.","Destroyed Wards leave behind debris. The brighter they are, the more recently they expired.","The Rift Herald returns to the Void at 19:30, but if it's in combat it can stay for another 20 seconds.","While there's no Dragon present, you can see which kind of Dragon will arrive next by looking at the symbol in its pit.","While there are no enemy minions nearby, Towers become immune to True Damage and only take 33% of all other damage.","The first Tower taken in a game gives out extra gold.","Slaying Baron Nashor grants your team a lot of gold and a significantly faster recall that lets you get back and upgrade your items quickly.","Invisible champions can be revealed with the Oracle's Lens and Oracle Alteration trinkets.","The Dragon respawns 6 minutes after its death."];
+				lolFact = document.getElementById("fact");
+				vid.volume = 0.08
+				vid.play()
+				vid.currentTime = 0;
+				setInterval(loop, 50)
+				showFact();
+			 }
+			function chooseFact(lolfactList)
+			 {
+				return lolfactList[getRandomInteger(0, lolfactList.length-1)];
+			 }
+			function showFact()
+			 {
+				lolFact.innerHTML = chooseFact(lolfactList);
+			 }
+			function loop() 
+			{
+				if (vid.paused) 
+				{
+					vid.play()
+				}
+			}
+
+</script>
 		</script>
 	</head>
-	<body>	
-		<h1><span><em><u> Welcome to League of Legends </em></u> </span></h1><br	/>
-		<span class = "Goal"> League of Legends is a MOBA, Multiplayer Online Battle Arena. You battle with your team to fight the enemy team to destroy towers guarding the enemy base, and then destroy said base. </span>
-		<span class = "Guide">Here is a more in-depth: <a id = "myAnchor" href = "https://www.mobafire.com/league-of-legends/build/lol-essentials-league-of-legends-new-player-beginner-guide-371292">Guide</a>.</span>
-		<div class = "Roles"> Roles </div>
+	<body onload = "initialize();">	
+		<h1><span><em><u> Welcome to League of Legends </em></u> </span></h1>
+		<span class="Guide"><a id="myAnchor2" href="https://www.mobafire.com/league-of-legends/build/lol-essentials-league-of-legends-new-player-beginner-guide-371292">Guide</a> for League of Legends</span>
+		<span class = "Guide"><a id = "myAnchor" href = "https://universe.leagueoflegends.com/en_US/"> Lore </a> of League of legends</span> 
+		<div class = "Roles"> <u> Roles </u> </div>
 		<h3> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h3>
-		<div class = "Created"> League of Legends (abbreviated LoL) is a multiplayer online battle arena video game developed and published by Riot Games for Microsoft Windows and macOS. The game follows a freemium model and is supported by microtransactions, and was inspired by the Warcraft III: The Frozen Throne mod, Defense of the Ancients. </div>
+		<span><img src="logo.png" onclick = "showFact(lolfactList);">Click the Icon to see a new fact.</img></span>
+		<div class = "Fact" id = "fact"></div>
+		<audio controls autoplay hidden id = "vid">
+			<source src = "Ranked.mp3" type = "audio/mpeg">
+		</audio>
 	</body>
 </html>
