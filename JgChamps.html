@@ -32,18 +32,33 @@
 		{
 			color: orange;
 		}
+		.detail
+		{
+			font-size:20px;
+			color: white;
+			text-shadow:
+			-1px -1px 0 #000,
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
+		}
 		</style>
 		<script>
 			function initialize()
 			{
+				champInfo = ["Kha'Zix is an Ad assassin, and if he snowballs early game he can kill your carries before you can even see him.","Lee Sin is played as either an Ad assassin or an Ad bruiser who can win fights with his ultimate defensively or offensively.","Master Yi is heavy dps champion who if gets to late game can carry games when played correctly.","Rengar is very similar to Kha'zix in play style, but can outshine him if you utilize his passive jump and long stealthed ultimate.","Udyr has multiple play styles such as split-pusher, annoying tanky stun bot, or even an Assassin if you want.",""];
 				Champion = "";
 				ChampNow = document.getElementById("ChampionD");
+				champSInfo = document.getElementById("cDetail");
 				display();
-				vid.volume = 0.08
-				vid.play()
-				vid.currentTime = 0;
-				setInterval(loop, 50)
-				
+			}
+			function chooseInfo(whichInfo)
+			{
+				return champInfo[whichInfo];
+			}
+			function showInfo(whichInfo)
+			{
+				champSInfo.innerHTML = chooseInfo(whichInfo);
 			}
 			function display()
 			{
@@ -56,12 +71,14 @@
 				{
 					x.style.display = "block";
 					Champion = "Kha'Zix";
+					showInfo("0");
 					display();
 				} 
 				else 
 				{
 					x.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -72,12 +89,14 @@
 				{
 					y.style.display = "block";
 					Champion = "Lee Sin";
+					showInfo("1");
 					display();
 				}
 				else 
 				{
 					y.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -88,12 +107,14 @@
 				{
 					z.style.display = "block";
 					Champion = "Master Yi";
+					showInfo("2");
 					display();
 				}
 				else 
 				{
 					z.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -104,12 +125,14 @@
 				{
 					a.style.display = "block";
 					Champion = "Rengar";
+					showInfo("3");
 					display();
 				}
 				else 
 				{
 					a.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -120,27 +143,23 @@
 				{
 					b.style.display = "block";
 					Champion = "Udyr";
+					showInfo("4");
 					display();
 				}
 				else 
 				{
 					b.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
-				}
-			}
-			function loop() 
-			{
-				if (vid.paused) 
-				{
-					vid.play()
 				}
 			}
 		</script>
 	</head>
 	<body onload = "initialize();">
 		<h1><span id ="Title">JG Champs: <span id = "ChampionD"></span></span></h1>
-		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<h2> Please wait a few seconds for the page to load. Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<span class = "detail" id = "cDetail"></span>
 		<ul>
 			<div><img src = "Kha_Zix.png" onclick = "showVideo1();"></img><iframe id = "KhaVideo" width="560" height="315" src="https://www.youtube.com/embed/jKLK9zFiVII?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
 			<div><img src = "Lee Sin.png" onclick = "showVideo2();"></img><iframe id = "LeeVideo" width="560" height="315" src="https://www.youtube.com/embed/e6SleHuJjLo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
@@ -149,8 +168,5 @@
 			<div><img src = "Udyr.png" onclick = "showVideo5();"></img><iframe id = "UdyrVideo" width="560" height="315" src="https://www.youtube.com/embed/dK4PwnV59ik?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
 		</ul>
 		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
-		<audio controls autoplay hidden id = "vid">
-			<source src = "Ranked.mp3" type = "audio/mpeg">
-		</audio>
 	</body>
 </html>

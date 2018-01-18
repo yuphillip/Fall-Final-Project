@@ -32,17 +32,33 @@
 		{
 			color: orange;
 		}
+		.detail
+		{
+			font-size:20px;
+			color: white;
+			text-shadow:
+			-1px -1px 0 #000,
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
+		}
 		</style>
 		<script>
 			function initialize()
 			{
+				champInfo = ["Ahri is Ap Assassin with lots of mobility in her 3 dashes and burst damage to charm and kill her opponent in multiple ways.","Katarina is Ap Assassin who lots of mobility and heavy AOE damage to kill everyone in seconds if played right.","Syndra is a burst mage with a single target nuke ultimate and a way to stun several enemies at once using her E ability.","Yasuo is a heavy Ad dps champion with the ability to slip and slide killing everyone on your time when played correctly, but is commonly known to die alot if not down right.","Zed is an Ad assassin who lots of mobility and outplay potential to kill his opponents in a flashy way and get out.",""];
 				Champion = "";
 				ChampNow = document.getElementById("ChampionD");
+				champSInfo = document.getElementById("cDetail");
 				display();
-				vid.volume = 0.08
-				vid.play()
-				vid.currentTime = 0;
-				setInterval(loop, 50)
+			}
+			function chooseInfo(whichInfo)
+			{
+				return champInfo[whichInfo];
+			}
+			function showInfo(whichInfo)
+			{
+				champSInfo.innerHTML = chooseInfo(whichInfo);
 			}
 			function display()
 			{
@@ -55,12 +71,14 @@
 				{
 					x.style.display = "block";
 					Champion = "Ahri";
+					showInfo("0");
 					display();
 				} 
 				else 
 				{
 					x.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -71,12 +89,14 @@
 				{
 					y.style.display = "block";
 					Champion = "Katarina";
+					showInfo("1");
 					display();
 				}
 				else 
 				{
 					y.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -87,12 +107,14 @@
 				{
 					z.style.display = "block";
 					Champion = "Syndra";
+					showInfo("2");
 					display();
 				}
 				else 
 				{
 					z.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -103,12 +125,14 @@
 				{
 					a.style.display = "block";
 					Champion = "Yasuo";
+					showInfo("3");
 					display();
 				}
 				else 
 				{
 					a.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -119,27 +143,23 @@
 				{
 					b.style.display = "block";
 					Champion = "Zed";
+					showInfo("4");
 					display();
 				}
 				else 
 				{
 					b.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
-				}
-			}
-			function loop() 
-			{
-				if (vid.paused) 
-				{
-					vid.play()
 				}
 			}
 		</script>
 	</head>
 	<body onload = "initialize();">
 		<h1><span id ="Title">Mid Champs: <span id = "ChampionD"></span></span></h1>
-		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<h2> Please wait a few seconds for the page to load. Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<span class = "detail" id = "cDetail"></span>
 		<ul>
 			<div><img src = "Ahri.png" onclick = "showVideo1();"></img><iframe id = "AhriVideo" width="560" height="315" src="https://www.youtube.com/embed/hlalkAUkwqE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
 			<div><img src = "Katarina.png" onclick = "showVideo2();"></img><iframe id = "KatVideo" width="560" height="315" src="https://www.youtube.com/embed/Kxd_Md9jbi0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
@@ -148,8 +168,5 @@
 			<div><img src = "Zed.png" onclick = "showVideo5();"></img><iframe id = "ZedVideo" width="560" height="315" src="https://www.youtube.com/embed/2DFtlNGzMIA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe></div>
 		</ul>	
 		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="TopChamps.html"> Top </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
-		<audio controls autoplay hidden id = "vid">
-			<source src = "Ranked.mp3" type = "audio/mpeg">
-		</audio>
 	</body>
 </html>

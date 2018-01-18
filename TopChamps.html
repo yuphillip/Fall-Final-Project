@@ -32,18 +32,33 @@
 		{
 			color: orange;
 		}
+		.detail
+		{
+			font-size:20px;
+			color: white;
+			text-shadow:
+			-1px -1px 0 #000,
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
+		}
 		</style>
 		<script>
 			function initialize()
 			{
+				champInfo = ["Gangplank is a heavy ad dps champion, who is able to destroy mid and late game team fights.","Gnar is tanky bruiser, who bullies his opponents in lane and is able to swing fights single handedly with his ultimate.","Rumble is heavy ap dps champion, who with the right placements of his ultimate in fights can carry games.","Teemo is versatile champion who can fill several roles if played right, but is most commonly hated and known for his mushrooms when he plays as an Ap threat.","Riven can be a Ad burst champion or an Ad bruiser, and can swing team fights with the correct usage of her abilites.",""];
 				Champion = "";
 				ChampNow = document.getElementById("ChampionD");
+				champSInfo = document.getElementById("cDetail");
 				display();
-				vid.volume = 0.08
-				vid.play()
-				vid.currentTime = 0;
-				setInterval(loop, 50)
-				
+			}
+			function chooseInfo(whichInfo)
+			{
+				return champInfo[whichInfo];
+			}
+			function showInfo(whichInfo)
+			{
+				champSInfo.innerHTML = chooseInfo(whichInfo);
 			}
 			function display()
 			{
@@ -56,12 +71,14 @@
 				{
 					x.style.display = "block";
 					Champion = "Gangplank";
+					showInfo("0");
 					display();
 				} 
 				else 
 				{
 					x.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -72,12 +89,14 @@
 				{
 					y.style.display = "block";
 					Champion = "Gnar";
+					showInfo("1");
 					display();
 				}
 				else 
 				{
 					y.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -88,12 +107,14 @@
 				{
 					z.style.display = "block";
 					Champion = "Rumble";
+					showInfo("2");
 					display();
 				}
 				else 
 				{
 					z.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -104,12 +125,14 @@
 				{
 					a.style.display = "block";
 					Champion = "Teemo";
+					showInfo("3");
 					display();
 				}
 				else 
 				{
 					a.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
 				}
 			}
@@ -120,27 +143,23 @@
 				{
 					b.style.display = "block";
 					Champion = "Riven";
+					showInfo("4");
 					display();
 				}
 				else 
 				{
 					b.style.display = "none";
 					Champion = "";
+					showInfo("5");
 					display();
-				}
-			}
-			function loop() 
-			{
-				if (vid.paused) 
-				{
-					vid.play()
 				}
 			}
 		</script>
 	</head>
 	<body onload = "initialize();">
 		<h1><span id ="Title">Top Champions: <span id = "ChampionD"></span></span></h1>
-		<h2> Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<h2> Please wait a few seconds for the page to load. Click on the champion to watch their spotlight and to show some more information.Click again to close(Make sure to pause video when done).</h2>
+		<span class = "detail" id = "cDetail"></span>
 		<ul>
 			<div><img src = "Gangplank.png" onclick = "showVideo1();"></img><iframe id = "GpVideo" width="560" height="315" src="https://www.youtube.com/embed/3kysDbC-NTo?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></iframe></div>
 			<div><img src = "gnar.png" onclick = "showVideo2();"></img><iframe id = "GnarVideo" width="560" height="315" src="https://www.youtube-nocookie.com/embed/4Qu3rhWGq0s?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></div>
@@ -149,8 +168,5 @@
 			<div><img src = "Riven.png" onclick = "showVideo5();"></img><iframe id = "RivenVideo" width="560" height="315" src="https://www.youtube.com/embed/V_ERvayBr3M?rel=0" frameborder="0" encrypted-media" allowfullscreen hidden></iframe></div></li>
 		</ul>
 		<h2> <a id="myAnchor" href="index.html"> Home </a> <a id="myAnchor" href="JgChamps.html"> Jungle </a> <a id="myAnchor" href="MidChamps.html"> Mid </a> <a id="myAnchor" href="BotChamps.html"> Bot </a> <a id="myAnchor" href="SuppChamps.html"> Support </a> </h2>
-		<audio controls autoplay hidden id = "vid">
-			<source src = "Ranked.mp3" type = "audio/mpeg">
-		</audio>
 	</body>
 </html>
